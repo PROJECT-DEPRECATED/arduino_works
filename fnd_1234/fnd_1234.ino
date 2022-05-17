@@ -1,3 +1,8 @@
+/*
+	General Public License 3.0v
+	Source url: https://github.com/devproje/arduino_works/blob/master/fnd_1234/fnd_1234.ino
+ */
+
 #define FND1000 12
 #define FND100 11
 #define FND10 10
