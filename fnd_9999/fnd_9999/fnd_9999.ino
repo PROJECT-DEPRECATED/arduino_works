@@ -5,7 +5,7 @@
 
 class FND {
   private:
-    int _delay = 2;
+    int _delay = 5;
     int _fnd_bit[10][7] = {
       {1, 1, 1, 1, 1, 1, 0}, // 0
       {0, 1, 1, 0, 0, 0, 0}, // 1
@@ -49,10 +49,17 @@ void loop() {
   FND fnd = FND();
 
   for (int i = 0; i < 10000; i++) {
-  
-    fnd.print_fnd(FND1000, 1);
-    fnd.print_fnd(FND100, 2);
-    fnd.print_fnd(FND10, 3);
-    fnd.print_fnd(FND1, 4);
+    int t = i % 10000 / 100;
+    int h = i % 1000 / 100;
+    int tens = i % 100 / 10;
+    int u = i % 10;
+    
+    fnd.print_fnd(FND1000, t);
+    fnd.print_fnd(FND100, h);
+    fnd.print_fnd(FND10, tens);
+    fnd.print_fnd(FND1, u);
+    Serial.println(String(t) + "\t" + String(h) + "\t" + String(tens) + "\t" + String(u));
+    
+    delay(1000);
   }
 }
